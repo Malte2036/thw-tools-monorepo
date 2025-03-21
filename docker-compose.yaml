@@ -7,10 +7,13 @@ services:
       dockerfile: apps/inventar/Dockerfile
       args:
         PUBLIC_API_URL: ${PUBLIC_API_URL}
-        PUBLIC_KINDE_DOMAIN: ${KINDE_DOMAIN}
+        PUBLIC_KINDE_API_CLIENT: ${PUBLIC_KINDE_API_CLIENT}
+        PUBLIC_KINDE_DOMAIN: ${PUBLIC_KINDE_DOMAIN}
+        PUBLIC_UMAMI_ENDPOINT: ${PUBLIC_UMAMI_ENDPOINT}
+        PUBLIC_UMAMI_WEBSITEID: ${PUBLIC_UMAMI_WEBSITEID}
     container_name: thw-inventar-frontend
     environment:
       NODE_ENV: production
     ports:
-      - '3001:5173'
+      - '3001:3000'
     restart: always
